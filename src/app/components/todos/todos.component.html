@@ -1,0 +1,54 @@
+<section class="container">
+    <div class="row">
+        <div class="todo-card card my-2 p-5">
+            <div class="mb-2">
+                <label for="new-todo-title">Titulo</label>
+                <input type="text" class="w-100" id="new-todo-title" #todoTitle required/>
+            </div>
+            <div class="mb-2">
+                <label for="new-todo-description">Descripción</label>
+                <input type="text" class="w-100" id="new-todo-description" #todoDescription required/>
+            </div>
+            <div class="mb-2">
+                <label for="new-todo-title" class="me-2">Completado</label>
+                <input type="checkbox" id="new-todo-completed"  #todoCompleted/>
+            </div>
+            <!-- (click) passes input value to add() and then clears the input -->
+            <button 
+                type="button" 
+                (click)="add(todoTitle.value, todoDescription.value, todoCompleted.checked);
+                todoTitle.value='';
+                todoDescription.value='';
+                todoCompleted.checked= false;
+                "
+                >
+                <span>Añadir tarea</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row gy-3 mt-3">
+        <div class="col-12 col-sm-6 col-md-4 d-sm-flex justify-content-between" *ngFor="let todo of todos">
+            <div class="todo-card card">
+                <div class="card-body p-4 h-100 d-flex flex-column justify-content-between">
+                    <h5 class="card-title w-100">{{todo.title}}</h5>
+                    <h6 *ngIf="todo.completed == true" class="card-subtitle mb-2 text-muted"><i class='bx bxs-check-circle todo-icon'></i></h6>
+                    <h6 *ngIf="todo.completed == false" class="card-subtitle mb-2 text-muted"><i class='bx bxs-circle-three-quarter todo-icon'></i></h6>
+                    <p class="card-text w-100">{{todo.description}}</p>
+                    <div class="d-flex flex-row justify-content-start align-items-end">
+                        <button type="button" routerLink="/details/{{todo.id}}">
+                            <span>Editar</span>
+                        </button>
+                        <button type="button" class="ms-2" (click)="delete(todo)">
+                            <span>Eliminar</span>
+                        </button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

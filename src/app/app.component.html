@@ -1,0 +1,33 @@
+<div class="app d-flex flex-column justify-content-between">
+    
+    <main>
+
+        <nav class="navbar navbar-dark bg-dark navbar-home">
+          <a class="navbar-brand ms-2" href="#">
+            ToDo List <i class='bx bx-task'></i> 
+          </a>
+        </nav>
+      
+      <nav class="d-flex justify-content-center mt-4 ">
+        <div class="d-flex flex-column flex-sm-row justify-content-between mb-2">
+          <button routerLink="/dashboard">
+            <span>Tareas en progreso</span>
+          </button>
+          <button routerLink="/todos" class="mt-sm-0 mt-2 ms-sm-2">
+            <span>Lista de tareas</span>
+          </button>
+        </div>
+      </nav>
+
+      <router-outlet></router-outlet>
+
+      <footer class="footer-home mt-4">
+        <div class="card text-center">
+          <div class="card-header">
+            &#169; Joaquin Javier Pastore Barrios
+          </div>
+        </div>
+      </footer>
+
+    </main>
+</div>

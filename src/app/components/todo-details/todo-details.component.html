@@ -1,0 +1,27 @@
+<section class="container">
+    <div class="row">
+        <div class="todo-card card mx-2 my-2 p-5" *ngIf="todo">
+                <div><label>Id: </label>{{todo.id}}</div>
+                <div class="mb-2">
+                    <label for="todo-title">Título:</label>
+                    <input type="text" id="todo-title" class="w-100" [(ngModel)]="todo.title" placeholder="title">
+                </div>
+                <div class="mb-2">
+                    <label for="todo-description">Descripción: </label>
+                    <input type="text" id="todo-description" class="w-100" [(ngModel)]="todo.description" placeholder="description">
+                </div>
+                <div class="mb-2">
+                    <label for="todo-completed" class="me-2">Completado</label>
+                    <input type="checkbox" id="todo-completed" [(ngModel)]="todo.completed">
+                </div>
+                <div class="d-flex flex-row mb-2">
+                    <button type="button" (click)="save()">
+                        <span>Guardar</span>
+                    </button>
+                    <button type="button" class="ms-2" (click)="goBack()">
+                        <span>Atrás</span>
+                    </button>
+                </div>
+        </div>
+    </div>
+</section>

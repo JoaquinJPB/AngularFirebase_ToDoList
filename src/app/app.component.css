@@ -1,0 +1,9 @@
+
+.navbar-home{
+    background-color: #2C384A !important;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+}
+
+.app{
+    min-height: 100vh;
+}
