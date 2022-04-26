@@ -1,7 +1,6 @@
 <section class="container">
     <div class="row">
         <div class="todo-card card mx-2 my-2 p-5" *ngIf="todo">
-                <div><label>Id: </label>{{todo.id}}</div>
                 <div class="mb-2">
                     <label for="todo-title">Título:</label>
                     <input type="text" id="todo-title" class="w-100" [(ngModel)]="todo.title" placeholder="title">

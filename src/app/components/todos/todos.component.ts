@@ -21,7 +21,7 @@ export class TodosComponent implements OnInit {
   }
 
   getTodos(): void{
-    this.todoService.getTodos().subscribe(todos => (this.todos = todos));
+    this.todoService.getTodosFirestore().subscribe(todos => (this.todos = todos));
   }
 
   add(title: string, description: string, completed: boolean): void {
@@ -30,11 +30,11 @@ export class TodosComponent implements OnInit {
     if (!title || !description) {
       return;
     }
-    this.todoService.addTodo({ title, description, completed } as Todo)
+    this.todoService.addTodoFirestore({ title, description, completed } as Todo)
   }
 
   delete(todo: Todo): void {
-    this.todoService.deleteTodo(todo);
+    this.todoService.deleteTodoFirestore(todo);
   }
 
 }

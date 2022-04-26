@@ -14,7 +14,7 @@ import { Todo } from '../../models/todo';
 
 export class TodoDetailsComponent implements OnInit {
 
-  @Input() todo?: Todo;
+  @Input() todo?: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,11 +27,8 @@ export class TodoDetailsComponent implements OnInit {
   }
   
   getTodo(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    /*
-    this.todoService.getTodo(id)
-      .subscribe(todo => this.todo = todo);
-    */
+    const id = String(this.route.snapshot.paramMap.get("id"));
+    this.todoService.getTodoFirestore(id).subscribe(todo => this.todo = todo);
   }
 
   goBack(): void {
@@ -39,12 +36,10 @@ export class TodoDetailsComponent implements OnInit {
   }
 
   save(): void {
-    /*
     if (this.todo) {
-      this.todoService.updateTodo(this.todo)
-        .subscribe(() => this.goBack());
+      this.todoService.updateTodoFirestore(this.todo);
     }
-    */
+
   }
   
 }

@@ -1,10 +1,10 @@
 <section class="container dashboard">
     <div class="row">
-        <div class="todo-card card mx-2 my-2" *ngFor="let todo of todos" routerLink="/details/{{todo.id}}">
+        <div class="todo-card card mx-2 my-2" *ngFor="let todo of todos" routerLink="/details/{{todo.payload.doc.id}}">
             <div class="card-body">
-                <h5 class="card-title">{{todo.title}}</h5>
+                <h5 class="card-title">{{todo.payload.doc.data().title}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted"><i class='bx bxs-circle-three-quarter'></i></h6>
-                <p class="card-text">{{todo.description}}</p>
+                <p class="card-text">{{todo.payload.doc.data().description}}</p>
             </div>
         </div>
     </div>

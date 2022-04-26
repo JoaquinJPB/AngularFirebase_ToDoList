@@ -12,16 +12,15 @@ export class TodoService {
 
   constructor(private firestoreDatabase: AngularFirestore) { }
 
-  getTodos() {
+  getTodosFirestore() {
     return this.firestoreDatabase.collection("todos").snapshotChanges();
   }
 
-  getTodo(id: number){
-    console.log(id)
-    
+  getTodoFirestore(id: string){
+    return this.firestoreDatabase.collection("todos").doc(id).valueChanges();
   }
 
-  addTodo(todo: Todo) {
+  addTodoFirestore(todo: Todo) {
     return new Promise<void>((resolve, reject) => {
       this.firestoreDatabase
           .collection("todos")
@@ -30,14 +29,14 @@ export class TodoService {
     });
   }
 
-  deleteTodo(todo: any){
+  deleteTodoFirestore(todo: any){
     return this.firestoreDatabase
           .collection("todos")
           .doc(todo.payload.doc.id)
           .delete();
   }
 
-  updateTodo(todo: any){
+  updateTodoFirestore(todo: any){
     return this.firestoreDatabase
           .collection("todos")
           .doc(todo.id)

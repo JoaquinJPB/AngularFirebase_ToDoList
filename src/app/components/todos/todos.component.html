@@ -38,7 +38,7 @@
                     <h6 *ngIf="todo.completed == false" class="card-subtitle mb-2 text-muted"><i class='bx bxs-circle-three-quarter todo-icon'></i></h6>
                     <p class="card-text w-100">{{todo.payload.doc.data().description}}</p>
                     <div class="d-flex flex-row justify-content-start align-items-end">
-                        <button type="button" routerLink="/details/{{todo.id}}">
+                        <button type="button" routerLink="/details/{{todo.payload.doc.id}}">
                             <span>Editar</span>
                         </button>
                         <button type="button" class="ms-2" (click)="delete(todo)">
