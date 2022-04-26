@@ -10,7 +10,7 @@ import { TodoService } from '../../services/todo.service';
 })
 export class DashboardComponent implements OnInit {
 
-  todos: Todo[] = [];
+  todos: any[] = [];
 
   constructor(private todoService: TodoService) { }
 
@@ -19,8 +19,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getTodos(): void {
-    this.todoService.getTodos()
-      .subscribe(todos => this.todos = todos.filter((todo) => todo.completed === false));
+    //this.todoService.getTodos().subscribe(todos => this.todos = todos.filter((todo) => todo.completed === false));
   }
 
 }

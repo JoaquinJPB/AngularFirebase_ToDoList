@@ -28,8 +28,10 @@ export class TodoDetailsComponent implements OnInit {
   
   getTodo(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+    /*
     this.todoService.getTodo(id)
       .subscribe(todo => this.todo = todo);
+    */
   }
 
   goBack(): void {
@@ -37,10 +39,12 @@ export class TodoDetailsComponent implements OnInit {
   }
 
   save(): void {
+    /*
     if (this.todo) {
       this.todoService.updateTodo(this.todo)
         .subscribe(() => this.goBack());
     }
+    */
   }
   
 }

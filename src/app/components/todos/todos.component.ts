@@ -12,7 +12,7 @@ import { TodoService } from '../../services/todo.service';
 
 export class TodosComponent implements OnInit {
 
-  todos: Todo[] = [];
+  todos: any[] = [];
 
   constructor(private todoService: TodoService) { }
 
@@ -21,8 +21,7 @@ export class TodosComponent implements OnInit {
   }
 
   getTodos(): void{
-    this.todoService.getTodos()
-      .subscribe(todos => this.todos = todos);
+    this.todoService.getTodos().subscribe(todos => (this.todos = todos));
   }
 
   add(title: string, description: string, completed: boolean): void {
@@ -32,14 +31,10 @@ export class TodosComponent implements OnInit {
       return;
     }
     this.todoService.addTodo({ title, description, completed } as Todo)
-      .subscribe((todo) => {
-        this.todos.push(todo);
-    });
   }
 
   delete(todo: Todo): void {
-    this.todos = this.todos.filter(t => t !== todo);
-    this.todoService.deleteTodo(todo.id).subscribe();
+    this.todoService.deleteTodo(todo);
   }
 
 }
