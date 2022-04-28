@@ -19,8 +19,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getTodos(): void {
-    this.todoService.getTodosFirestore().
-      subscribe(todos => this.todos = todos.filter((todo) => todo.payload.doc.data() === false))
+    this.todoService.getTodosWorkInProgressFirestore().subscribe(todosWIP => (this.todos = todosWIP));
   }
 
 }

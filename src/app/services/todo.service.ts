@@ -20,6 +20,10 @@ export class TodoService {
     return this.firestoreDatabase.collection("todos").doc(id).valueChanges();
   }
 
+  getTodosWorkInProgressFirestore(){
+    return this.firestoreDatabase.collection("todos", ref => ref.where('completed', '==', false)).snapshotChanges();
+  }
+
   addTodoFirestore(todo: Todo) {
     return new Promise<void>((resolve, reject) => {
       this.firestoreDatabase
@@ -36,10 +40,10 @@ export class TodoService {
           .delete();
   }
 
-  updateTodoFirestore(todo: any){
+  updateTodoFirestore(id: string, todo: any){
     return this.firestoreDatabase
           .collection("todos")
-          .doc(todo.id)
+          .doc(id)
           .set({
             title: todo.title,
             description: todo.description,

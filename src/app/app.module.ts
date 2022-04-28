@@ -13,7 +13,6 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoDetailsComponent } from './components/todo-details/todo-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { TodoSearchComponent } from './components/todo-search/todo-search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { TodoSearchComponent } from './components/todo-search/todo-search.compon
     TodosComponent,
     TodoDetailsComponent,
     DashboardComponent,
-    TodoSearchComponent,
   ],
   imports: [
     BrowserModule,
