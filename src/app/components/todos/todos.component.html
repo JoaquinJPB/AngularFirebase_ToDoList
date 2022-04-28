@@ -30,9 +30,9 @@
 
 <section class="container">
     <div class="row gy-3 mt-3">
-        <div class="col-12 col-sm-6 col-md-4 d-sm-flex justify-content-between" *ngFor="let todo of todos">
+        <div class="col-12 col-sm-6 col-md-4" *ngFor="let todo of todos">
             <div class="todo-card card">
-                <div class="card-body p-4 h-100 d-flex flex-column justify-content-between">
+                <div class="card-body p-4 h-100 d-flex flex-column justify-content-between align-items-start">
                     <h5 class="card-title w-100">{{todo.payload.doc.data().title}}</h5>
                     <h6 *ngIf="todo.payload.doc.data().completed == true" class="card-subtitle mb-2 text-muted"><i class='bx bxs-check-circle todo-icon'></i></h6>
                     <h6 *ngIf="todo.payload.doc.data().completed == false" class="card-subtitle mb-2 text-muted"><i class='bx bxs-circle-three-quarter todo-icon'></i></h6>
