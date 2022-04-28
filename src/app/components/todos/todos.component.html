@@ -34,8 +34,8 @@
             <div class="todo-card card">
                 <div class="card-body p-4 h-100 d-flex flex-column justify-content-between">
                     <h5 class="card-title w-100">{{todo.payload.doc.data().title}}</h5>
-                    <h6 *ngIf="todo.completed == true" class="card-subtitle mb-2 text-muted"><i class='bx bxs-check-circle todo-icon'></i></h6>
-                    <h6 *ngIf="todo.completed == false" class="card-subtitle mb-2 text-muted"><i class='bx bxs-circle-three-quarter todo-icon'></i></h6>
+                    <h6 *ngIf="todo.payload.doc.data().completed == true" class="card-subtitle mb-2 text-muted"><i class='bx bxs-check-circle todo-icon'></i></h6>
+                    <h6 *ngIf="todo.payload.doc.data().completed == false" class="card-subtitle mb-2 text-muted"><i class='bx bxs-circle-three-quarter todo-icon'></i></h6>
                     <p class="card-text w-100">{{todo.payload.doc.data().description}}</p>
                     <div class="d-flex flex-row justify-content-start align-items-end">
                         <button type="button" routerLink="/details/{{todo.payload.doc.id}}">
