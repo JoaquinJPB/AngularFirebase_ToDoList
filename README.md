@@ -13,6 +13,6 @@ Se ha hecho uso de componentes anidados, servicios, enrutamiento y naveganción,
 
 Por comentar algunos aspectos, una To Do, que se compone de un titulo, una descripción y un estado de completado. Como principal componente encontraremos el todo, que se encarga de crear un todo y mostrar todos los todos que hay ya creados. También hay un componente de dashboard que muestra las todos que están en progreso actualmente. Estos dos componentes se pueden mostrar a través de dos botones de navegación que se encuentran en la parte de arriba de la aplicación.
 
-En cuanto a la parte de Firebase, se esta usando la base de datos Firestore.
+En cuanto a la parte de Firebase, se esta usando la base de datos firestore.
 
 Se puede observar el funcionamiento de la siguente apliación en el siguiente enlace:
