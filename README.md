@@ -15,4 +15,4 @@ Por comentar algunos aspectos, una To Do, que se compone de un titulo, una descr
 
 En cuanto a la parte de Firebase, se esta usando la base de datos firestore.
 
-Se puede observar el funcionamiento de la siguente apliación en el siguiente enlace:
+Se puede observar el funcionamiento de la siguente apliación en el siguiente enlace: https://joaquinjpb.github.io/AngularFirebase_ToDoList/dashboard
