@@ -25,7 +25,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
   ],
   providers: [],
