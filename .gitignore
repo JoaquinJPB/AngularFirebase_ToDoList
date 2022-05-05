@@ -48,3 +48,4 @@ Thumbs.db
 
 # Scanner SonarQube
 /.scannerwork
+/.scannerwork/.sonar_lock
