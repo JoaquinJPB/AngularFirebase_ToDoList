@@ -25,11 +25,11 @@ export class TodoService {
   }
 
   addTodoFirestore(todo: Todo) {
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<void>((reject) => {
       this.firestoreDatabase
           .collection("todos")
           .add(todo)
-          .then( res => {}, error => reject(error))
+          .then(_res => {}, error => reject(error))
     });
   }
 
