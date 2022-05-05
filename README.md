@@ -16,6 +16,6 @@ Por comentar algunos aspectos, una To Do, que se compone de un titulo, una descr
 En cuanto a la parte de Firebase, se esta usando la base de datos firestore.
 
 Además se ha usado la herramienta de SonarQube para realizar un analisis del proyecto.
-
+![SonarQube](/AngularFirebaseTodoList_SonarQube.png)
 
 Se puede observar el funcionamiento de la siguente apliación en el siguiente enlace: https://joaquinjpb.github.io/AngularFirebase_ToDoList/dashboard
